@@ -5,6 +5,9 @@
  */
 package collegeapplication;
 
+import java.sql.Connection;
+import java.sql.Statement;
+
 /**
  *18285
  * @author raju
@@ -14,9 +17,25 @@ public class studentAttandance extends javax.swing.JFrame {
     /**
      * Creates new form studentAttandance
      */
+    Statement stmt;
+    DatabaseConnect db = new DatabaseConnect();
+    Connection conn = db.connect();
+    int id;
+    String uName;
     public studentAttandance() {
         initComponents();
     }
+    public studentAttandance(int no, String name) {
+        initComponents();
+        this.id = no;
+        this.uName = name;
+    }
+
+    studentAttandance(int id, String uName, int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -85,6 +104,11 @@ public class studentAttandance extends javax.swing.JFrame {
         });
 
         jButton2.setText("Cancel");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -138,7 +162,14 @@ public class studentAttandance extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        new Admin(id,uName).setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.sql.*;
 
 /**
- *
+ *  18285
  * @author raju
  */
 public class CollegeApplication {

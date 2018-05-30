@@ -5,8 +5,11 @@
  */
 package collegeapplication;
 
+import java.sql.Connection;
+import java.sql.Statement;
+
 /**
- *
+ *18285
  * @author raju
  */
 public class Mydetail extends javax.swing.JFrame {
@@ -14,8 +17,18 @@ public class Mydetail extends javax.swing.JFrame {
     /**
      * Creates new form Mydetail
      */
+    Statement stmt;
+    DatabaseConnect db = new DatabaseConnect();
+    Connection conn = db.connect();
+    int id;
+    String uName;
     public Mydetail() {
         initComponents();
+    }
+    public Mydetail(int no, String name) {
+        initComponents();
+        this.id = no;
+        this.uName = name;
     }
 
     /**
@@ -59,6 +72,11 @@ public class Mydetail extends javax.swing.JFrame {
         jLabel6.setText("Address");
 
         jButton1.setText("OK");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -138,6 +156,12 @@ public class Mydetail extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+       new Student().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

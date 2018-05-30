@@ -5,17 +5,34 @@
  */
 package collegeapplication;
 
+import java.sql.Connection;
+import java.sql.Statement;
+
 /**
- *
+ * 18285
  * @author raju
  */
 public class Calendar extends javax.swing.JPanel {
 
     /**
-     * Creates new form Calendrar
+     * Creates new form Calendar
      */
+    Statement stmt;
+    DatabaseConnect db = new DatabaseConnect();
+    Connection conn = db.connect();
+    int id;
+    String uName;
     public Calendar() {
         initComponents();
+    }
+    public Calendar(int no, String name) {
+        initComponents();
+        this.id = no;
+        this.uName = name;
+    }
+    {
+    this.dispose();
+        new Calendar(id, uName).setVisible(true);
     }
      public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -181,4 +198,8 @@ public class Calendar extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    private void dispose() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

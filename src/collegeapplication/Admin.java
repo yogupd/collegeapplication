@@ -54,6 +54,11 @@ public class Admin extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 51, 204));
         jButton1.setText("1. Module");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 51, 204));
@@ -85,6 +90,11 @@ public class Admin extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jButton5.setForeground(new java.awt.Color(0, 51, 204));
         jButton5.setText("5. Attandance");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jButton6.setForeground(new java.awt.Color(0, 51, 204));
@@ -224,6 +234,18 @@ public class Admin extends javax.swing.JFrame {
         this.dispose();
         new Fees(id, uName).setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        new studentAttandance(id,uName).setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        new Module(id,uName).setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
